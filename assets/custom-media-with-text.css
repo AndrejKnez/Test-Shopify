@@ -1,0 +1,14 @@
+.b-custom-media-with-text__media, .b-custom-media-with-text__video {
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .b-custom-media-with-text__media {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .b-custom-media-with-text__image, .b-custom-media-with-text__video {
+        width: 50%;
+        height: 300px;
+    }
+}

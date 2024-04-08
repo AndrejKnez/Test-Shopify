@@ -1,0 +1,165 @@
+{
+  "sections": {
+    "custom_media_with_text_6R4qKe": {
+      "type": "custom-media-with-text",
+      "blocks": {
+        "text_fewy4B": {
+          "type": "text",
+          "settings": {
+            "custom_heading": "h1",
+            "heading_text": "<p>This is HEADING 1<\/p>",
+            "heading_color": "#9e3555",
+            "heading_font": "beefcakes_n4"
+          }
+        },
+        "text_3GWTgi": {
+          "type": "text",
+          "settings": {
+            "custom_heading": "h2",
+            "heading_text": "<p>This is HEADING 2<\/p>",
+            "heading_color": "#000000",
+            "heading_font": "helvetica_n4"
+          }
+        },
+        "text_wAAeeW": {
+          "type": "text",
+          "settings": {
+            "custom_heading": "h3",
+            "heading_text": "<p>This is HEADING 3<\/p>",
+            "heading_color": "#000000",
+            "heading_font": "helvetica_n4"
+          }
+        },
+        "text_7gQTbX": {
+          "type": "text",
+          "settings": {
+            "custom_heading": "h4",
+            "heading_text": "<p>This is HEADING 4<\/p>",
+            "heading_color": "#000000",
+            "heading_font": "helvetica_n4"
+          }
+        },
+        "text_bt8mxj": {
+          "type": "text",
+          "settings": {
+            "custom_heading": "h5",
+            "heading_text": "<p>This is HEADING 5<\/p>",
+            "heading_color": "#000000",
+            "heading_font": "helvetica_n4"
+          }
+        },
+        "text_CNW3eJ": {
+          "type": "text",
+          "settings": {
+            "custom_heading": "h6",
+            "heading_text": "<p>This is HEADING 6<\/p>",
+            "heading_color": "#000000",
+            "heading_font": "alfie_n4"
+          }
+        },
+        "media_QLmRQg": {
+          "type": "media",
+          "settings": {
+            "section_image": "shopify:\/\/shop_images\/hram-svetog-save.jpg",
+            "section_video": "shopify:\/\/files\/videos\/Pink Floyd - Wish You Were Here (PULSE Restored & Re-Edited).mp4",
+            "section_external_video": "https:\/\/www.youtube.com\/watch?v=2ssCL292DQA&list=RDNlgmH5q9uNk&index=27"
+          }
+        }
+      },
+      "block_order": [
+        "text_fewy4B",
+        "text_3GWTgi",
+        "text_wAAeeW",
+        "text_7gQTbX",
+        "text_bt8mxj",
+        "text_CNW3eJ",
+        "media_QLmRQg"
+      ],
+      "settings": {
+      }
+    },
+    "custom_products_with_text_jtGaVB": {
+      "type": "custom-products-with-text",
+      "blocks": {
+        "headings_qf8KTa": {
+          "type": "headings",
+          "settings": {
+            "custom_heading": "h1",
+            "heading_text": "<p>This is HEADING 1<\/p>",
+            "heading_color": "#b74242",
+            "heading_font": "serif"
+          }
+        },
+        "headings_AbmHHQ": {
+          "type": "headings",
+          "settings": {
+            "custom_heading": "h2",
+            "heading_text": "<p>This is HEADING 2<\/p>",
+            "heading_color": "#bc3838",
+            "heading_font": "helvetica_n4"
+          }
+        },
+        "headings_RMcbYw": {
+          "type": "headings",
+          "settings": {
+            "custom_heading": "h3",
+            "heading_text": "<p>This is HEADING 3<\/p>",
+            "heading_color": "#31612d",
+            "heading_font": "amiri_n4"
+          }
+        },
+        "headings_mjijez": {
+          "type": "headings",
+          "settings": {
+            "custom_heading": "h4",
+            "heading_text": "<p>THIS IS HEADING 4<\/p>",
+            "heading_color": "#501818",
+            "heading_font": "helvetica_n4"
+          }
+        },
+        "headings_7UWkF3": {
+          "type": "headings",
+          "settings": {
+            "custom_heading": "h5",
+            "heading_text": "<p>THIS IS HEADING 5<\/p>",
+            "heading_color": "#b0acd1",
+            "heading_font": "helvetica_n4"
+          }
+        },
+        "headings_7MXzRw": {
+          "type": "headings",
+          "settings": {
+            "custom_heading": "h6",
+            "heading_text": "<p>THIS IS HEADING 6<\/p>",
+            "heading_color": "#177aef",
+            "heading_font": "mono"
+          }
+        },
+        "product_MQJHcE": {
+          "type": "product",
+          "settings": {
+            "section_product": "{{ page.metafields.custom.product.value }}",
+            "section_product_list": "{{ page.metafields.custom.product_list.value }}"
+          }
+        }
+      },
+      "block_order": [
+        "headings_qf8KTa",
+        "headings_AbmHHQ",
+        "headings_RMcbYw",
+        "headings_mjijez",
+        "headings_7UWkF3",
+        "headings_7MXzRw",
+        "product_MQJHcE"
+      ],
+      "settings": {
+        "custom_padding_top": 50,
+        "custom_padding_bottom": 50
+      }
+    }
+  },
+  "order": [
+    "custom_media_with_text_6R4qKe",
+    "custom_products_with_text_jtGaVB"
+  ]
+}

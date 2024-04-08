@@ -1,0 +1,12 @@
+<div class="c-product-card">
+  {% if section_product.featured_image %}
+      {{ section_product.featured_image | image_url: width: 500 | image_tag: class: 'c-product-card-image' }}
+  {% endif %}
+  {% if section_product.title %}
+      <h3 class="c-product-card-name">{{ section_product.title }}</h3>
+  {% endif %}
+  {% if section_product.price != blank %}
+      <p class="c-product-card-price">{{ section_product.price | money }}</p>
+  {% endif %}
+</div>
+

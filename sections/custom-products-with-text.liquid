@@ -1,0 +1,140 @@
+{{ 'custom-products-with-text.css' | asset_url | stylesheet_tag }}
+
+{% liquid
+    # Variables
+    assign custom_padding_top = section.settings.custom_padding_top
+    assign custom_padding_bottom = section.settings.custom_padding_bottom
+
+    # Blocks
+    assign section_headings = section.blocks | where: 'type', 'headings'
+    assign section_products = section.blocks | where: 'type', 'product'
+%}
+
+<section class="b-custom-products-with-text" style="padding: {{ custom_padding_top }}px 0 {{ custom_padding_bottom }}px;">
+    <div class="l">
+        <div class="b-custom-products-with-text__wrapper flex dir-col align-center justify-center row-gap-20">
+          {% render 'snippet-headings' section_headings: section_headings %}
+          {% if section_products.size > 0 %}
+          <div class="b-custom-products-with-text__products">
+              {% for product in section_products %}
+                      {% assign section_product = all_products[product.settings.section_product] %}
+                      {% assign section_product_list = product.settings.section_product_list %}
+                      {% if section_product != blank and section_product.available != false %}
+                          {% render 'snippet-product-card' section_product: section_product %}
+                      {% endif %}
+                      {% if section_product_list %}
+                        {% for product in section_product_list %}
+                            {% render 'snippet-product-card' section_product: product %}
+                          {% endfor %}
+                      {% endif %}
+              {% endfor %}
+          </div>
+      {% endif %}
+      
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+    "name": "Custom Products With Text",
+    "settings": [
+      {
+        "type": "range",
+        "id": "custom_padding_top",
+        "min": 1,
+        "max": 100,
+        "step": 1,
+        "label": "Change Padding Top",
+        "default": 40
+      },
+      {
+        "type": "range",
+        "id": "custom_padding_bottom",
+        "min": 1,
+        "max": 100,
+        "step": 1,
+        "label": "Change Padding Bottom",
+        "default": 40
+      }
+    ],
+    "blocks": [
+      {
+        "type": "headings",
+        "name": "Headings",
+        "settings": [
+          {
+            "type": "select",
+            "id": "custom_heading",
+            "label": "Choose Heading",
+            "options": [
+              {
+                "value": "h1",
+                "label": "H1"
+              },
+              {
+                "value": "h2",
+                "label": "H2"
+              },
+              {
+                "value": "h3",
+                "label": "H3"
+              },
+              {
+                "value": "h4",
+                "label": "H4"
+              },
+              {
+                "value": "h5",
+                "label": "H5"
+              },
+              {
+                "value": "h6",
+                "label": "H6"
+              }
+            ],
+            "default": "h2"
+          },
+          {
+            "type": "richtext",
+            "id": "heading_text",
+            "label": "Heading Text"
+          },
+          {
+            "type": "color",
+            "id": "heading_color",
+            "label": "Heading Color",
+            "default": "#000000"
+          },
+          {
+            "type": "font_picker",
+            "id": "heading_font",
+            "label": "Heading Font",
+            "default": "helvetica_n4"
+          }
+        ]
+      },
+      {
+        "type": "product",
+        "name": "Product",
+        "settings": [
+          {
+            "type": "product",
+            "id": "section_product",
+            "label": "Choose Product"
+          },
+          {
+            "type": "product_list",
+            "id": "section_product_list",
+            "label": "Choose Products"
+          }
+        ]
+      }
+    ],
+    "presets": [
+        {
+            "name": "Custom Products With Text"
+        }
+    ]
+  }
+{% endschema %}
