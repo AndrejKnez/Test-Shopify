@@ -4,8 +4,10 @@
             {% assign heading_text = heading.settings.heading_text %}
             {% assign heading_color = heading.settings.heading_color %}
             {% assign heading_font = heading.settings.heading_font %}
+            {% if heading_text != blank %}
                 <{{heading_tag}} style="color: {{ heading_color }}; font-family: {{ heading_font.family }}">
                 {{ heading_text }}
                 </{{heading_tag}}>
+            {% endif %}
         {% endfor %}
     </div>
