@@ -1,0 +1,152 @@
+{{ 'custom-media-with-text.css' | asset_url | stylesheet_tag }}
+
+{% liquid
+    # Blocks
+    assign section_headings = section.blocks | where: 'type', 'text'
+    assign section_media = section.blocks | where: 'type', 'media'
+%}
+
+<section class="b-custom-media-with-text padding-40">
+    <div class="l">
+        <div class="b-custom-media-with-text__wrapper flex dir-col align-center justify-center row-gap-40">
+        {% if section_headings.size > 0 %}
+          {% render 'snippet-headings' section_headings: section_headings %}
+        {% endif %}
+        {% if section_media.size > 0 %}
+            <div class="b-custom-media-with-text__media flex dir-col align-center row-gap-10">
+                {% for media in section_media %}
+                    {% assign section_image = media.settings.section_image %}
+                    {% assign section_video = media.settings.section_video %}
+                    {% assign section_external_video = media.settings.section_external_video %}
+                      {% if section_image %}
+                          {{ section_image | image_url: width: 500 | image_tag: class: 'b-custom-media-with-text__image image',  loading: 'lazy'}}
+                      {% endif %}
+                      {% if section_video %}
+                          {{ section_video | video_tag: autoplay: true, loop: true, muted: true, controls: true,  loading: 'lazy', class: 'b-custom-media-with-text__video' }}
+                      {% endif %}
+                      {% if section_external_video %}
+                      {% if section_external_video contains 'youtube.com' %}
+                      {% assign video_id = section_external_video | split: 'watch?v=' | last %}
+                      {% assign youtube_embed_url = 'https://www.youtube.com/embed/' | append: video_id %}
+                        <iframe
+                          width="100%"
+                          height="100%"
+                          class="b-custom-media-with-text__video"
+                          src="{{ youtube_embed_url }}"
+                          frameborder="0"
+                          allowfullscreen
+                        ></iframe>
+                      {% elsif section_external_video contains 'vimeo.com' %}
+                      {% assign video_id = section_external_video | split: '/' | last %}
+                      {% assign vimeo_embed_url = 'https://player.vimeo.com/video/' | append: video_id %}
+                        <iframe
+                          src="{{ vimeo_embed_url }}"
+                          width="100%"
+                          height="100%"
+                          class="b-custom-media-with-text__video"
+                          frameborder="0"
+                          allow="autoplay; fullscreen; picture-in-picture"
+                          allowfullscreen
+                        ></iframe>
+                  {% endif %}
+                  {% endif %}
+                {% endfor %}
+            </div>
+        {% endif %}
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+  "name": "t:sections.custom-media-with-text.name",
+  "settings": [],
+  "blocks": [
+  {
+    "type": "text",
+    "name": "t:sections.custom-media-with-text.blocks.text.name",
+    "settings": [
+      {
+        "type": "select",
+        "id": "custom_heading",
+        "label": "t:sections.custom-media-with-text.blocks.text.settings.custom-heading.label",
+        "options": [
+          {
+            "value": "h1",
+            "label": "t:sections.custom-media-with-text.blocks.text.settings.h1.label"
+          },
+          {
+            "value": "h2",
+            "label": "t:sections.custom-media-with-text.blocks.text.settings.h2.label"
+          },
+          {
+            "value": "h3",
+            "label": "t:sections.custom-media-with-text.blocks.text.settings.h3.label"
+          },
+          {
+            "value": "h4",
+            "label": "t:sections.custom-media-with-text.blocks.text.settings.h4.label"
+          },
+          {
+            "value": "h5",
+            "label": "t:sections.custom-media-with-text.blocks.text.settings.h5.label"
+          },
+          {
+            "value": "h6",
+            "label": "t:sections.custom-media-with-text.blocks.text.settings.h6.label"
+          }
+        ],
+        "default": "h2"
+      },
+      {
+        "type": "richtext",
+        "id": "heading_text",
+        "label": "t:sections.custom-media-with-text.blocks.text.settings.heading-text.label"
+      },
+      {
+        "type": "color",
+        "id": "heading_color",
+        "label": "t:sections.custom-media-with-text.blocks.text.settings.heading-color.label",
+        "default": "#000000"
+      },
+      {
+        "type": "font_picker",
+        "id": "heading_font",
+        "label": "t:sections.custom-media-with-text.blocks.text.settings.heading-font.label",
+        "default": "helvetica_n4"
+      }
+    ]
+  },
+    {
+      "type": "media",
+      "name": "t:sections.custom-media-with-text.blocks.media.name",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "section_image",
+          "label": "t:sections.custom-media-with-text.blocks.media.settings.image.label"
+        },
+        {
+          "type": "video",
+          "id": "section_video",
+          "label": "t:sections.custom-media-with-text.blocks.media.settings.video.label"
+        },
+        {
+          "type": "video_url",
+          "id": "section_external_video",
+          "label": "t:sections.custom-media-with-text.blocks.media.settings.external-video.label",
+          "accept": [
+            "youtube",
+            "vimeo"
+          ]
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.custom-media-with-text.name"
+    }
+  ]
+}
+{% endschema %}

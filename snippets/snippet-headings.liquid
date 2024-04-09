@@ -1,0 +1,11 @@
+    <div class="c-headings flex dir-col align-center row-gap-10">
+        {% for heading in section_headings %}
+            {% assign heading_tag = heading.settings.custom_heading %}
+            {% assign heading_text = heading.settings.heading_text %}
+            {% assign heading_color = heading.settings.heading_color %}
+            {% assign heading_font = heading.settings.heading_font %}
+                <{{heading_tag}} style="color: {{ heading_color }}; font-family: {{ heading_font.family }}">
+                {{ heading_text }}
+                </{{heading_tag}}>
+        {% endfor %}
+    </div>

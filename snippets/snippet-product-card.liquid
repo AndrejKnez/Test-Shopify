@@ -1,0 +1,19 @@
+<a class="c-product-card__wrapper" href="{{ section_product.url }}">
+<article class="c-product-card flex dir-col align-center justify-center row-gap-10">
+  {% if section_product.featured_image %}
+      {{ section_product.featured_image | image_url: width: 500 | image_tag: class: 'c-product-card-image image' }}
+  {% endif %}
+  {% if section_product.title %}
+      <h3 class="c-product-card__name">{{ section_product.title }}</h3>
+  {% endif %}
+  {% if section_product.price != blank %}
+    <div class="c-product-card__prices">
+            <p class="c-product-card__price">{{ section_product.price | money }}</p>
+            {% if section_product.compare_at_price %}
+            <p class="c-product-card__price-compare">{{ section_product.compare_at_price | money }}</p>
+        {% endif %}
+    </div>
+  {% endif %}
+</article>
+</a>
+
