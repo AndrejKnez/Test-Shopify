@@ -6,9 +6,11 @@
     .b-custom-media-with-text__media {
         flex-direction: row;
         flex-wrap: wrap;
+        justify-content: space-between;
+        row-gap: 20px;
     }
     .b-custom-media-with-text__image, .b-custom-media-with-text__video {
-        width: 50%;
+        width: 48%;
         height: 300px;
     }
 }
