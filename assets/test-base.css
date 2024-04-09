@@ -54,6 +54,11 @@ html {
     padding: 40px 0;
 }
 
+.c-product-card__wrapper {
+    text-decoration: none;
+    color: #000;
+}
+
 .c-product-card__prices {
     display: flex;
     align-items: center;

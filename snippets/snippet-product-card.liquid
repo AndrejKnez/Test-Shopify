@@ -1,4 +1,5 @@
-<div class="c-product-card flex dir-col align-center justify-center row-gap-10">
+<a class="c-product-card__wrapper" href="{{ section_product.url }}">
+<article class="c-product-card flex dir-col align-center justify-center row-gap-10">
   {% if section_product.featured_image %}
       {{ section_product.featured_image | image_url: width: 500 | image_tag: class: 'c-product-card-image image' }}
   {% endif %}
@@ -13,5 +14,6 @@
         {% endif %}
     </div>
   {% endif %}
-</div>
+</article>
+</a>
 

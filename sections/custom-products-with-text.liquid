@@ -27,9 +27,9 @@
                       {% if section_product_list %}
                         <div class="b-custom-products-with-text__products">
                           {% for product in section_product_list %}
-                          {% if product !=  section_product%}
-                            {% render 'snippet-product-card' section_product: product %}
-                          {% endif %}
+                            {% if product != section_product %}
+                              {% render 'snippet-product-card' section_product: product %}
+                            {% endif %}
                           {% endfor %}
                         </div>
                       {% endif %}
