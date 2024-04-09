@@ -13,7 +13,9 @@
 <section class="b-custom-products-with-text" style="padding: {{ custom_padding_top }}px 0 {{ custom_padding_bottom }}px;">
     <div class="l">
         <div class="b-custom-products-with-text__wrapper flex dir-col align-center justify-center row-gap-20">
-          {% render 'snippet-headings' section_headings: section_headings %}
+          {% if section_headings.size > 0 %}
+            {% render 'snippet-headings' section_headings: section_headings %}
+          {% endif %}
           {% if section_products.size > 0 %}
           <div class="b-custom-products-with-text__products">
               {% for product in section_products %}
@@ -29,112 +31,111 @@
                       {% endif %}
               {% endfor %}
           </div>
-      {% endif %}
-      
+        {% endif %}
         </div>
     </div>
 </section>
 
 {% schema %}
 {
-    "name": "Custom Products With Text",
-    "settings": [
-      {
-        "type": "range",
-        "id": "custom_padding_top",
-        "min": 1,
-        "max": 100,
-        "step": 1,
-        "label": "Change Padding Top",
-        "default": 40
-      },
-      {
-        "type": "range",
-        "id": "custom_padding_bottom",
-        "min": 1,
-        "max": 100,
-        "step": 1,
-        "label": "Change Padding Bottom",
-        "default": 40
-      }
-    ],
-    "blocks": [
-      {
-        "type": "headings",
-        "name": "Headings",
-        "settings": [
-          {
-            "type": "select",
-            "id": "custom_heading",
-            "label": "Choose Heading",
-            "options": [
-              {
-                "value": "h1",
-                "label": "H1"
-              },
-              {
-                "value": "h2",
-                "label": "H2"
-              },
-              {
-                "value": "h3",
-                "label": "H3"
-              },
-              {
-                "value": "h4",
-                "label": "H4"
-              },
-              {
-                "value": "h5",
-                "label": "H5"
-              },
-              {
-                "value": "h6",
-                "label": "H6"
-              }
-            ],
-            "default": "h2"
-          },
-          {
-            "type": "richtext",
-            "id": "heading_text",
-            "label": "Heading Text"
-          },
-          {
-            "type": "color",
-            "id": "heading_color",
-            "label": "Heading Color",
-            "default": "#000000"
-          },
-          {
-            "type": "font_picker",
-            "id": "heading_font",
-            "label": "Heading Font",
-            "default": "helvetica_n4"
-          }
-        ]
-      },
-      {
-        "type": "product",
-        "name": "Product",
-        "settings": [
-          {
-            "type": "product",
-            "id": "section_product",
-            "label": "Choose Product"
-          },
-          {
-            "type": "product_list",
-            "id": "section_product_list",
-            "label": "Choose Products"
-          }
-        ]
-      }
-    ],
-    "presets": [
+  "name": "t:sections.custom-product-with-text.name",
+  "settings": [
+    {
+      "type": "range",
+      "id": "custom_padding_top",
+      "min": 1,
+      "max": 100,
+      "step": 1,
+      "label": "t:sections.custom-product-with-text.settings.padding-top.label",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "custom_padding_bottom",
+      "min": 1,
+      "max": 100,
+      "step": 1,
+      "label": "t:sections.custom-product-with-text.settings.padding-bottom.label",
+      "default": 40
+    }
+  ],
+  "blocks": [
+    {
+      "type": "headings",
+      "name": "t:sections.custom-product-with-text.blocks.headings.name",
+      "settings": [
         {
-            "name": "Custom Products With Text"
+          "type": "select",
+          "id": "custom_heading",
+          "label": "t:sections.custom-product-with-text.blocks.headings.settings.custom-heading.label",
+          "options": [
+            {
+              "value": "h1",
+              "label": "t:sections.custom-product-with-text.blocks.headings.settings.h1.label"
+            },
+            {
+              "value": "h2",
+              "label": "t:sections.custom-product-with-text.blocks.headings.settings.h2.label"
+            },
+            {
+              "value": "h3",
+              "label": "t:sections.custom-product-with-text.blocks.headings.settings.h3.label"
+            },
+            {
+              "value": "h4",
+              "label": "t:sections.custom-product-with-text.blocks.headings.settings.h4.label"
+            },
+            {
+              "value": "h5",
+              "label": "t:sections.custom-product-with-text.blocks.headings.settings.h5.label"
+            },
+            {
+              "value": "h6",
+              "label": "t:sections.custom-product-with-text.blocks.headings.settings.h6.label"
+            }
+          ],
+          "default": "h2"
+        },
+        {
+          "type": "richtext",
+          "id": "heading_text",
+          "label": "t:sections.custom-product-with-text.blocks.headings.settings.heading-text.label"
+        },
+        {
+          "type": "color",
+          "id": "heading_color",
+          "label": "t:sections.custom-product-with-text.blocks.headings.settings.heading-color.label",
+          "default": "#000000"
+        },
+        {
+          "type": "font_picker",
+          "id": "heading_font",
+          "label": "t:sections.custom-product-with-text.blocks.headings.settings.heading-font.label",
+          "default": "helvetica_n4"
         }
-    ]
-  }
+      ]
+    },
+    {
+      "type": "product",
+      "name": "t:sections.custom-product-with-text.blocks.product.name",
+      "settings": [
+        {
+          "type": "product",
+          "id": "section_product",
+          "label": "t:sections.custom-product-with-text.blocks.product.settings.product-default.label"
+        },
+        {
+          "type": "product_list",
+          "id": "section_product_list",
+          "label": "t:sections.custom-product-with-text.blocks.product.settings.product-list.label"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.custom-product-with-text.name"
+    }
+  ]
+}
 {% endschema %}

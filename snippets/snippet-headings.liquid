@@ -1,4 +1,3 @@
-{% if section_headings.size > 0 %}
     <div class="c-headings flex dir-col align-center row-gap-10">
         {% for heading in section_headings %}
             {% assign heading_tag = heading.settings.custom_heading %}
@@ -10,4 +9,3 @@
                 </{{heading_tag}}>
         {% endfor %}
     </div>
-{% endif %}

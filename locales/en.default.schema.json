@@ -507,6 +507,119 @@
         "name": "Announcement bar"
       }
     },
+    "custom-product-with-text": {
+      "name": "Custom Products With Text",
+      "settings": {
+        "padding-top": {
+          "label": "Change Padding Top"
+        },
+        "padding-bottom": {
+          "label": "Change Padding Bottom"
+        }
+      },
+      "blocks": {
+        "headings": {
+          "name": "Headings",
+          "settings": {
+            "custom-heading": {
+              "label": "Choose Heading"
+            },
+            "h1": {
+              "label": "H1"
+            },
+            "h2": {
+              "label": "H2"
+            },
+            "h3": {
+              "label": "H3"
+            },
+            "h4": {
+              "label": "H4"
+            },
+            "h5": {
+              "label": "H5"
+            },
+            "h6": {
+              "label": "H6"
+            },
+            "heading-text": {
+              "label": "Heading Text"
+            },
+            "heading-color": {
+              "label": "Heading Color"
+            },
+            "heading-font": {
+              "label": "Heading Font"
+            }
+          }
+        },
+        "product": {
+          "name": "Product",
+          "settings": {
+            "product-default": {
+              "label": "Choose Product"
+            },
+            "product-list": {
+              "label": "Choose Products"
+            }
+          }
+        }
+      }
+    },
+    "custom-media-with-text": {
+      "name": "Custom Media With Text",
+      "blocks": { 
+        "text": {
+          "name": "Text",
+          "settings": {
+            "custom-heading": {
+              "label": "Choose Heading"
+            },
+            "h1": {
+              "label": "H1"
+            },
+            "h2": {
+              "label": "H2"
+            },
+            "h3": {
+              "label": "H3"
+            },
+            "h4": {
+              "label": "H4"
+            },
+            "h5": {
+              "label": "H5"
+            },
+            "h6": {
+              "label": "H6"
+            },
+            "heading-text": {
+              "label": "Heading Text"
+            },
+            "heading-color": {
+              "label": "Heading Color"
+            },
+            "heading-font": {
+              "label": "Heading Font"
+            }
+          }
+        },
+        "media": {
+          "name": "Media",
+          "settings": {
+            "image": {
+              "label": "Upload Image"
+            },
+            "video": {
+              "label": "Upload Shopify Video"
+            },
+            "external-video": {
+              "label": "Upload Youtube or Vimeo Video"
+            }
+          }
+        }
+      }
+    },
     "apps": {
       "name": "Apps",
       "settings": {

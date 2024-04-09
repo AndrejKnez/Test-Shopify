@@ -1,3 +1,11 @@
-.custom-products-with-text {
-    
+.b-custom-products-with-text__products {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+}
+
+@media (min-width: 768px) {
+    .b-custom-products-with-text__products {
+        grid-gap: 20px;
+    }
 }
