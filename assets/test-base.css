@@ -90,4 +90,7 @@ html {
     .c-product-card__price-compare {
         font-size: 24px;
     }
+    .c-product-card {
+        row-gap: 20px;
+    }
 }

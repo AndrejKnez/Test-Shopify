@@ -17,7 +17,7 @@
             {% render 'snippet-headings' section_headings: section_headings %}
           {% endif %}
           {% if section_products.size > 0 %}
-          <div class="b-custom-products-with-text__products">
+          <div class="b-custom-products-with-text__products-wrapper flex dir-col  align-center row-gap-40">
               {% for product in section_products %}
                       {% assign section_product = all_products[product.settings.section_product] %}
                       {% assign section_product_list = product.settings.section_product_list %}
@@ -25,9 +25,13 @@
                           {% render 'snippet-product-card' section_product: section_product %}
                       {% endif %}
                       {% if section_product_list %}
-                        {% for product in section_product_list %}
+                        <div class="b-custom-products-with-text__products">
+                          {% for product in section_product_list %}
+                          {% if product !=  section_product%}
                             {% render 'snippet-product-card' section_product: product %}
+                          {% endif %}
                           {% endfor %}
+                        </div>
                       {% endif %}
               {% endfor %}
           </div>
