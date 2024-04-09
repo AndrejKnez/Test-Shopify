@@ -86,8 +86,8 @@
           "settings": {
             "custom_heading": "h1",
             "heading_text": "<p>This is HEADING 1<\/p>",
-            "heading_color": "#b74242",
-            "heading_font": "serif"
+            "heading_color": "#ea0000",
+            "heading_font": "abril_fatface_n4"
           }
         },
         "headings_AbmHHQ": {
