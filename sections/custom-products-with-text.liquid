@@ -24,7 +24,7 @@
                       {% if section_product != blank and section_product.available != false %}
                           {% render 'snippet-product-card' section_product: section_product %}
                       {% endif %}
-                      {% if section_product_list %}
+                      {% if section_product_list != blank %}
                         <div class="b-custom-products-with-text__products">
                           {% for product in section_product_list %}
                             {% if product != section_product %}
